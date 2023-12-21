@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://routeacademy.github.io/Bookmarker/images/bookmark.png" type="image/x-icon">
+    <title>Bookmarker</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&family=Saira+Condensed:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <main class="py-5 position-relative">
+
+        <div class="container d-flex flex-column justify-content-center align-items-center">
+            <h1 class="py-2 position-relative">Bookmarker</h1>
+            <div
+                class="bookmark-body w-100 px-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4">
+                <h2>
+                    <i class="fa-solid fa-bookmark me-2"></i>
+                    Bookmark your favorite sites
+                </h2>
+                <div class="w-100 d-flex flex-column justify-content-center">
+                    <label for="bookmarkName" class="text-black pb-2 fw-bold">
+                        <i class="fa-solid fa-book-bookmark pe-2"></i>
+                        Site Name</label>
+                    <input type="text" placeholder="Bookmark Name" class="form-control bg-dark text-black fw-bolder"
+                        id="bookmarkName" oninput="validateSiteName()" />
+                    <p class="text-danger d-none" id="invaildName">Site name must contain at least 3 characters</p>
+                </div>
+                <div class="w-100 d-flex flex-column justify-content-center">
+                    <label for="bookmarkURL" class="text-black pb-2 fw-bold">
+                        <i class="fa-solid fa-link pe-2"></i>Site URL</label>
+                    <input type="url" placeholder="Website URL" class="form-control bg-dark text-black fw-bolder"
+                        id="bookmarkURL" oninput="validateSiteURL()" />
+                    <p class="text-danger d-none" id="invaildURL">Site URL must be a valid one</p>
+                </div>
+                <button class="btn btn-submit text-black fw-bolder px-5" id="submitBtn"
+                    onclick="addWebsite()">Submit</button>
+            </div>
+            <table class="table table-dark mt-4 text-center">
+                <thead>
+                    <th class="text-capitalize text-black fs-5">index</th>
+                    <th class="text-capitalize text-black fs-5">Website Name</th>
+                    <th class="text-capitalize text-black fs-5">Visit</th>
+                    <th class="text-capitalize text-black fs-5">Delete</th>
+                </thead>
+                <tbody id="tableContent"></tbody>
+            </table>
+        </div>
+
+    </main>
+
+
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
